@@ -1,0 +1,12 @@
+hr.customer-red-line{
+    margin-top: 20px;
+    border: 0;
+    height: 2px;
+    width: 50%;
+    margin-left: 20px;
+    background: #016189;
+    opacity: 1;
+}
+.account-section{
+    font-family: 'Montserrat', sans-serif;
+}

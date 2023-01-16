@@ -1,0 +1,138 @@
+.wrap{
+    width: 100%;
+    background-color: #72BBFF;
+    overflow: hidden;
+    border-radius: 17px;
+    margin-top: 25px;
+    box-shadow: 1px 4px 41px 15px rgba(0,0,0,0.4);
+    height: 600px;
+    font-family: 'Montserrat', sans-serif;
+}
+div.container{
+    max-width: 1350px;
+}
+.col-auto{
+    margin-right: -30px;
+    border-radius: 17px;
+}
+.img-logo .login-wrap{
+    width: 55%;
+}
+.login-wrap{
+    position: relative;
+    margin-top: -20px;
+    width: 600px;
+}
+.img-logo{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.login-wrap .create-acc{
+    font-weight: bold;
+    color: white;
+}
+.white-line{
+    width: 100%;
+}
+hr.white-line{
+    border: 1px solid white;
+    width: auto;
+    margin-top: -10px;
+}
+form .form-control{
+    margin: 0;
+    height: 40px;
+    font-size: 14px;
+    width: 100%;
+    padding-top: 5px;
+    border-radius: 17px;
+}
+input.form-control{
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    display: block;
+}
+button.sign.btn{
+    border: none;
+    margin-top: 15px;
+    margin-left: 40%;
+    font-size: 15px;
+}
+form .text1{
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+form .text2{
+    margin-top: -10px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+#link-login{
+    color: #ED5264;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-close{
+    float: right;
+    margin-top: -50px;
+}
+@media (max-width: 900px) {
+    .wrap{
+        width: 600px;
+        margin-left: 100px;
+    }
+    .img-logo{
+        height: 0;
+        width: 0;
+    }
+    .login-wrap{
+        width: 600px;
+    }
+} 
+@media (max-width: 768px) {
+    .wrap{
+        width: 600px;
+        margin-left: 10px;
+    }
+    .img-logo{
+        height: 0;
+        width: 0;
+    }
+    .login-wrap{
+        width: 600px;
+    }
+    .login-wrap .create-acc{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 576px){
+    .wrap{
+        width: 475px;
+        margin-left: 0;
+        display: block;
+    }
+    form .input-group{
+        width: 420px;
+    }
+    .img-logo{
+        height: 0;
+        width: 0;
+    }
+    .login-wrap{
+        width: 600px;
+    }
+    p.text1, p.text2{
+        padding-right: 130px;
+    }
+    button.sign.btn{
+        border: none;
+        margin-top: 15px;
+        margin-left: 30%;
+        font-size: 15px;
+    }
+}

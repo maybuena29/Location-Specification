@@ -1,0 +1,56 @@
+.navbar{
+    background-color: white;
+    box-shadow: 0px 6px 16px 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+.color-nav{
+    text-align: center;
+    margin-left: 10px;
+}
+.color-nav .dropdown-item{
+    color: #ED5264;
+}
+.color-nav .dropdown-menu{
+    padding-top: 5px;
+}
+.navbar .navbar-brand{
+    padding: 0;
+    margin:0;
+}
+hr.dropdown-divider{
+    border-top: 1px solid #016189;
+}
+.form-control{
+    margin-left: 20px;
+    width: 28%;
+}
+.navbar .input-group{
+    margin-top: 15px;
+    width: 35%;
+    color: #016189;
+}
+.sign-in1, .cart-icon2, .user-name{
+    display: none;
+}
+.sign-in2{
+    padding: 20px;
+    color: #016189;
+}
+.cart-icon{
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    .user-name, .sign-in1{
+        display: inline;
+    }
+    .cart-icon2{
+        display: inline;
+        margin-left: auto;
+        padding: 20px;
+    }
+    .sign-in2, .user-name2, .cart-icon{
+        display: none;
+    }
+}

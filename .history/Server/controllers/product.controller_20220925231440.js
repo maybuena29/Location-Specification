@@ -1,0 +1,95 @@
+const db = require('../main.db');
+
+function displayData(req, res){
+    const sqlSelect="SELECT `productID`, `productName`, `productDescription`, (SELECT Attribute_Name FROM tblattributes WHERE Attr_ID = `productAttribute`) AS `productAttribute`, (SELECT Value_Name FROM tblattributesvalue WHERE Value_ID = `productAttrValue`) AS `productAttrValue`, `productPrice`, (SELECT Category_Name FROM tblcategory WHERE CategoryID = `productCategory`) AS `productCategory`, (SELECT Brand_Name FROM tblbrand WHERE BrandID = `productBrand`) AS `productBrand`, (SELECT Supplier_ComName FROM tblsupplier WHERE SupplierID = `productSupplier`) AS `productSupplier`, `productReqPres`, `productSKU`, `productStatus` FROM `tblproducts`";
+    db.query(sqlSelect,(err,result) => {
+       res.send(result);
+    });
+}
+
+function insertData(req, res){
+
+    const productName = req.body.productName;
+    const productDescription = req.body.productDescription;
+    const productAttribute = req.body.productAttribute;
+    const productAttrValue = req.body.productAttrValue;
+    const productPrice = req.body.productPrice;
+    const productCategory = req.body.productCategory;
+    const productBrand = req.body.productBrand;
+    const productSupplier = req.body.productSupplier;
+    const productSKU = req.body.productSKU;
+    const prodStatus = req.body.productStatus;
+    var productReqPres = req.body.productReqPres;
+        
+
+    if (productReqPres == null){
+        productReqPres = 0; 
+    }
+
+    const sqlInsert = "INSERT INTO tblproducts (productName, productDescription, productAttribute, productAttrValue, productPrice, productCategory, productBrand, productSupplier, productSKU, productReqPres, productStatus) Values (?,?,?,?,?,?,?,?,?,?,?)"
+        
+    db.query(sqlInsert, [productName, productDescription, productAttribute, productAttrValue, productPrice,productCategory,
+        productBrand, productSupplier, productSKU, productReqPres, prodStatus] , (err,result) => {
+        console.log(err);
+    });
+}
+
+function getData(req, res){
+    const PID = req.params.id;
+    
+    const sqlSelectID = "* FROM `tblproducts` WHERE productID = ?";
+    
+    db.query(sqlSelectID, [PID], (err, result) => {
+        if(err){
+            console.log(err);
+        }
+        res.send(result[0]);
+        console.log(result[0]);
+    });
+}
+   
+function updateData(req, res){
+    const PID = req.params.id;
+    const productName = req.body.productName;
+    const productDescription = req.body.productDescription;
+    const productAttribute = req.body.productAttribute;
+    const productAttrValue = req.body.productAttrValue;
+    const productPrice = req.body.productPrice;
+    const productCategory = req.body.productCategory;
+    const productBrand = req.body.productBrand;
+    const productSupplier = req.body.productSupplier;
+    const productSKU = req.body.productSKU;
+    const prodStatus = req.body.productStatus;
+    var productReqPres = req.body.productReqPres;
+      
+    // if (productReqPres === null){
+    //     productReqPres = '0';
+    // }
+
+    const sqlUpdate = "UPDATE tblproducts SET productName = ?, productDescription = ?, productAttribute = ?, productAttrValue = ?, productPrice = ?,productCategory = ?, productBrand = ?, productSupplier = ?, productReqPres = ?, productSKU = ?, productStatus = ? WHERE productID = ?";
+
+    db.query(sqlUpdate, [productName, productDescription, productAttribute, productAttrValue, productPrice, productCategory, productBrand,productSupplier, productReqPres, productSKU, prodStatus, PID], (err, result) => {
+        if(err){
+            console.log(err);
+        }
+        res.send(result);
+        console.log(result);
+    });
+}
+
+function deleteData(req, res){
+    const PID = req.params.PID;
+    const sqlDelete="DELETE FROM tblproducts WHERE productID = ?";
+
+    db.query(sqlDelete, PID,(err,result)=>{
+        res.send(result);
+    });    
+}
+
+module.exports = {
+    display: displayData,
+    insert: insertData,
+    get: getData,
+    update: updateData,
+    delete: deleteData
+}

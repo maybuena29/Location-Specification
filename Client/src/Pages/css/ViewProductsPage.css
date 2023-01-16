@@ -1,0 +1,29 @@
+.viewprods-section{
+    font-family: 'Montserrat', sans-serif;
+}
+hr.viewprods-line{
+    margin-top: 20px;
+    border: 0;
+    height: 3px;
+    width: 80%;
+    background: #ED5264;
+    opacity: 1;
+}
+hr.viewprods-line2{
+    margin-top: 20px;
+    border: 0;
+    height: 3px;
+    width: 100%;
+    /* margin-left: 45px; */
+    background: #ED5264;
+    opacity: 1;
+}
+hr.viewprods-line3{
+    margin-top: 20px;
+    border: 0;
+    height: 3px;
+    width: 100%;
+    /* margin-left: 45px; */
+    background: #fff;
+    opacity: 1;
+}
