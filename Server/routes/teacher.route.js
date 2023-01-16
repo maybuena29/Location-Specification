@@ -8,10 +8,7 @@ teacherRoute.post('/api/teacher/insert', teacherCtrl.insert);
 teacherRoute.get('/api/teacher/get/:id', teacherCtrl.get);
 teacherRoute.put('/api/teacher/update/:id', teacherCtrl.update);
 
-<<<<<<< HEAD
 teacherRoute.get('/api/teacher/get/active/account/:id', teacherCtrl.getTeacherData);
-=======
->>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
 teacherRoute.get('/api/teacher/get/active/account', teacherCtrl.getActive);
 
 teacherRoute.post('/api/teacher/account/login', teacherCtrl.userLogin);
