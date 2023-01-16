@@ -79,7 +79,11 @@ const CustomerAccount = () => {
     const navigate = useNavigate();
 
     const fetchTeacherInfo = async () => {
+<<<<<<< HEAD
         const { data } = await Axios.get(`${mainApi}/api/teacher/get/active/account/${user.teacher_id}`, {signal: abortController.signal}).catch((err)=>{
+=======
+        const { data } = await Axios.get(`${mainApi}/api/teacher/get/${user.teacher_id}`, {signal: abortController.signal}).catch((err)=>{
+>>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
           if (err.response.status===403){
             navigate('/NotAuthorizedPage')
           }
@@ -208,7 +212,11 @@ const CustomerAccount = () => {
                     <Image
                       className='w-1/2 pt-4 pb-4 md:w-1/6'
                       preview={true}
+<<<<<<< HEAD
                       fallback={profileIcon}
+=======
+                      fallback={medLogo}
+>>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
                       src={user.teacher_image? user.teacher_image:profileIcon }/>
                 </center>
             </div>

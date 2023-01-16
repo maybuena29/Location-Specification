@@ -45,7 +45,10 @@ const OrdersList = ()=> {
             item.teacher_username.toLowerCase().includes(searchVal.toLowerCase()) ||
             item.teacher_name.toLowerCase().includes(searchVal.toLowerCase()) ||
             item.location.toLowerCase().includes(searchVal.toLowerCase()) ||
+<<<<<<< HEAD
             item.currentStatus.toLowerCase().includes(searchVal.toLowerCase()) ||
+=======
+>>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
             item.status.toLowerCase().includes(searchVal.toLowerCase())
         )
     }

@@ -59,6 +59,7 @@ function getData(req, res){
     });
 }
 
+<<<<<<< HEAD
 function getTeacherData(req, res){
     const id = req.params.id;
     const sqlSelect = "SELECT `teacher_id`, `teacher_username`, `teacher_password`, `teacher_image`, `teacher_name`, (SELECT `room_name` FROM `tblrooms` WHERE `room_id` = `location`) AS 'location', (SELECT `status_name` FROM `tblstatus` WHERE `status_id` = `status`) AS 'status', `currentStatus`, `acc_status` FROM `tblteachers` WHERE `teacher_id` = ?";
@@ -73,6 +74,8 @@ function getTeacherData(req, res){
     });
 }
 
+=======
+>>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
 function updateData(req, res){
     const id = req.params.id;
     const username = req.body.teacherUsername;
@@ -243,7 +246,10 @@ module.exports = {
     display: displayData,
     insert: insertData,
     get: getData,
+<<<<<<< HEAD
     getTeacherData: getTeacherData,
+=======
+>>>>>>> 8402df3b9a9ac087268d7e830ad8b1a7d87091ae
     update: updateData,
     getActive: getActiveTeacher,
     userLogin: userLogin,
