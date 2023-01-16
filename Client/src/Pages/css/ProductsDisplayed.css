@@ -1,0 +1,33 @@
+.display-products{
+    width: 100%;
+    height: 100%;
+}
+hr.red-line{
+    margin-top: 20px;
+    border: 0;
+    height: 4px;
+    width: 96%;
+    margin-left: 20px;
+    background: #ED5264;
+    opacity: 1;
+}
+.saleTxt{
+    padding-top: 30px;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    width: auto;
+}
+img.card-img-top{
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+
+}
+
+@media (max-width: 576px) {
+    div.fproducts{
+        flex-direction: column;
+    }
+} 

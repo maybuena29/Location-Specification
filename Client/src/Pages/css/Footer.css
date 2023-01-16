@@ -1,0 +1,27 @@
+.main-footer{
+    color: gray;
+    background-color: #016189;
+    position: relative;
+    min-height: min-content;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+li:hover{
+    color: #72BBFF;
+}
+.bottom-footer{
+    background-color: #016189;
+}
+a:link{
+    text-decoration: none;
+}
+li{
+    color: gray;
+}
+/* li:hover{
+    color: #72BBFF;
+} */
