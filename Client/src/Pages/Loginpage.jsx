@@ -41,7 +41,7 @@ const Loginpage = () => {
   return (
     <div className='flex w-full h-screen px-10 md:px-0 lg:px-0'>
         <div className='rounded-bl-2xl rounded-tl-2xl rounded-r-2xl grid grid-cols-1 sm:grid-cols-2 m-auto h-[500px] shadow-lg shadow-gray-600 sm:max-w-[990px] w-full'>
-            <div className='hidden w-full h-full bg-white sm:block'>
+            <div className='hidden w-full h-full bg-white sm:block rounded-l-2xl'>
                 <img className='w-full h-full bg-fixed rounded-bl-2xl rounded-tl-2xl' src={mainLogo} alt="/"/>
             </div>
             <div className='flex flex-col items-center justify-center w-full'>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import add from '../Images/add.png';
 import edit from '../Images/edit.png';
+import profileIcon from '../Images/teacher_icon.png';
 //for data
 import { Header } from '../components';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@material-tailwind/react';
-import { Modal, Input, Select, notification, Space, Table, Checkbox,message} from 'antd';
+import { Modal, Input, Select, notification, Space, Table, Checkbox,message, Image} from 'antd';
 import type { ColumnsType, TableProps } from 'antd/es/table';
 //for database
 import Axios from "axios";
@@ -181,7 +182,7 @@ const Teachers = () => {
 
 
   //pag add and update ng data
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if(btnType === 'Add'){
       if(teacherInfo.teacherName.trim().length === 0){
         message.error('The Teacher Name is Empty!');
@@ -260,7 +261,7 @@ const Teachers = () => {
          //code for update
         console.log("teacher info: ",teacherInfo);
         console.log("teacher id: ",teacherInfo.teacherID);
-        Axios.put(`${mainApi}/api/teacher/update/${teacherInfo.teacherID}`, {
+        await Axios.put(`${mainApi}/api/teacher/update/${teacherInfo.teacherID}`, {
           teacherUsername: teacherInfo.teacherUsername,
           teacherPassword: teacherInfo.teacherPassword,
           teacherImage: teacherInfo.teacherImage,
@@ -284,6 +285,7 @@ const Teachers = () => {
           alert(err.response.data);
           handleOk();
         });
+        handleOk();
       }
     }
     else{
@@ -328,7 +330,9 @@ const Teachers = () => {
         dataIndex: 'teacher_image',
         align: 'center',
         render: (text, record) => {
-          return <p style={{textTransform: 'capitalize'}}>{text}</p>
+          return <span style={{ textTransform: 'capitalize' }}>
+                  {record.teacher_image? <Image preview={false} className='w-12 h-12' src={record.teacher_image}/>:<Image className='w-12 h-12' preview={false} src={profileIcon}/>}
+               </span>
         }
       },
       {

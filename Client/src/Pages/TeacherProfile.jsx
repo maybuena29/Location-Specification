@@ -205,7 +205,11 @@ const CustomerAccount = () => {
             {/* <center><Image src={profileIcon} height='200px' width='200px' ></Image></center> */}
             <div>
                 <center>
-                    <Image src={profileIcon} className='w-1/2 pt-4 pb-4 md:w-1/6'></Image>
+                    <Image
+                      className='w-1/2 pt-4 pb-4 md:w-1/6'
+                      preview={true}
+                      fallback={medLogo}
+                      src={user.teacher_image? user.teacher_image:profileIcon }/>
                 </center>
             </div>
             <Row>
